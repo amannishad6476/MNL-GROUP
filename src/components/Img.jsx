@@ -1,0 +1,1 @@
+export default function Img({src,alt,className=""}){return src?<img src={src} alt={alt} loading="lazy" className={`object-cover ${className}`}/>:<div role="img" aria-label={alt} className={`bg-ink/90 ${className}`}/>}

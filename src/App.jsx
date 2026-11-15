@@ -1,0 +1,4 @@
+import {Routes,Route,Link} from "react-router-dom";import Navbar from "./components/Navbar";import Footer from "./components/Footer";import WhatsApp from "./components/WhatsApp";
+import Home from "./pages/Home";import Services from "./pages/Services";import ServiceDetail from "./pages/ServiceDetail";import Designs from "./pages/Designs";import Contact from "./pages/Contact";
+export default function App(){return <><Navbar/><Routes><Route path="/" element={<Home/>}/><Route path="/services" element={<Services/>}/><Route path="/services/:slug" element={<ServiceDetail/>}/><Route path="/designs" element={<Designs/>}/><Route path="/contact" element={<Contact/>}/>
+<Route path="*" element={<main className="px-6 pb-20 pt-40 text-center"><h1 className="font-display text-4xl">Page not found</h1><Link to="/" className="mt-4 inline-block border-b border-gold">Go home</Link></main>}/></Routes><Footer/><WhatsApp floating/></>}

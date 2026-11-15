@@ -1,0 +1,12 @@
+import {Link} from "react-router-dom";import {motion} from "framer-motion";import Img from "../components/Img";import {IMG} from "../data/images";import {TRUST,SERVICES} from "../data/content";
+export default function Home(){return <>
+<section className="relative flex min-h-screen items-end bg-ink"><Img src={IMG.hero} alt="Modern luxury house exterior" className="absolute inset-0 h-full w-full opacity-60"/>
+<div className="absolute inset-0 bg-gradient-to-t from-ink/80 to-transparent"/>
+<motion.div initial={{opacity:0,y:24}} animate={{opacity:1,y:0}} transition={{duration:.9}} className="relative mx-auto w-full max-w-7xl px-6 pb-24 text-white">
+<h1 className="font-display text-5xl leading-tight md:text-8xl">Building Dreams.<br/>Creating Beautiful Spaces.</h1>
+<p className="mt-6 max-w-xl text-lg text-white/85">From architectural planning to the final finishing touches, MNL GROUP brings every home solution under one trusted name.</p>
+<div className="mt-8 flex flex-wrap gap-4"><Link to="/services" className="bg-gold px-7 py-3.5 font-medium text-ink">Explore Our Services</Link><Link to="/contact" className="border border-white px-7 py-3.5">Get Free Consultation</Link></div></motion.div></section>
+<section className="mx-auto grid max-w-7xl gap-6 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">{TRUST.map(t=><p key={t} className="border-t border-gold pt-4 font-display text-2xl">{t}</p>)}</section>
+<section className="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2"><Img src={IMG.about} alt="Architectural interior" className="aspect-[4/5] w-full"/>
+<div><h2 className="font-display text-4xl md:text-5xl">Creating Spaces That Inspire Living.</h2><p className="mt-5 max-w-prose text-body/80">MNL GROUP provides integrated home construction, interior design, renovation and home improvement services, so one team can carry your home from plan to finish.</p><Link to="/services" className="mt-8 inline-block border-b border-gold pb-1">Learn More</Link></div></section>
+<section className="bg-ink px-6 py-20 text-white"><div className="mx-auto max-w-7xl"><h2 className="font-display text-4xl">Our services</h2><div className="mt-8 grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-3">{SERVICES.slice(0,6).map(s=><Link key={s.slug} to={`/services/${s.slug}`} className="bg-ink p-8 hover:bg-white/5"><h3 className="font-display text-2xl text-gold">{s.title}</h3><p className="mt-2 text-sm text-white/70">{s.short}</p></Link>)}</div></div></section></>}

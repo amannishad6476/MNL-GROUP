@@ -1,0 +1,5 @@
+import {useParams,Link} from "react-router-dom";import {SERVICES} from "../data/content";import WhatsApp from "../components/WhatsApp";import Img from "../components/Img";import {IMG} from "../data/images";
+export default function ServiceDetail(){const {slug}=useParams(),s=SERVICES.find(x=>x.slug===slug);
+if(!s)return <main className="px-6 pb-20 pt-40 text-center"><h1 className="font-display text-4xl">Service not found</h1><Link to="/services" className="mt-4 inline-block border-b border-gold">Back to services</Link></main>;
+return <main className="mx-auto max-w-5xl px-6 pb-20 pt-32"><Img src={IMG.services[s.slug]} alt={s.title} className="aspect-[16/7] w-full"/><h1 className="mt-8 font-display text-5xl">{s.title}</h1><p className="mt-4 max-w-prose">{s.short}</p>
+<div className="mt-8 flex flex-wrap gap-4"><Link to={`/contact?service=${encodeURIComponent(s.title)}`} className="bg-gold px-6 py-3 font-medium text-ink">Get Free Consultation</Link><WhatsApp message={`Hello MNL GROUP, I am interested in your ${s.title} service. Please share more details.`}/></div></main>}

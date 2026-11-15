@@ -1,0 +1,3 @@
+import {Link} from "react-router-dom";import Img from "../components/Img";import {IMG} from "../data/images";import {SERVICES} from "../data/content";
+export default function Services(){return <main className="mx-auto max-w-7xl px-6 pb-20 pt-32"><h1 className="font-display text-5xl">Services</h1>
+<div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">{SERVICES.map(s=><article key={s.slug}><Img src={IMG.services[s.slug]} alt={s.title} className="aspect-[4/3] w-full"/><h2 className="mt-4 font-display text-2xl">{s.title}</h2><p className="text-sm text-muted">{s.short}</p><Link to={`/services/${s.slug}`} className="mt-2 inline-block border-b border-gold text-sm">Explore Service</Link></article>)}</div></main>}

@@ -1,0 +1,3 @@
+export const SERVICES=["House Construction","Architectural Design","Interior Design","Exterior Design","Painting & Texture","Furniture & Woodwork","Modular Kitchen","Electrical Services","Plumbing Services","POP & False Ceiling","Home Renovation","Waterproofing"].map(t=>({slug:t.toLowerCase().replace(/ & /g,"-").replace(/\s+/g,"-"),title:t,short:`Professional ${t.toLowerCase()} planned and delivered by MNL GROUP.`}));
+export const CATEGORIES=["Modern House Designs","Luxury Villas","Bedroom Interiors","Living Room Interiors","Modular Kitchens","Bathroom Designs","False Ceiling Designs","Wooden Furniture","House Front Elevations"];
+export const TRUST=["Complete Home Solutions","Quality Workmanship","Professional Team","Customer-Focused Approach"];
